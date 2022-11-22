@@ -4203,18 +4203,6 @@ class ThemeDecoder {
 
     if (value is IconData) {
       result = value;
-    } else if (value != null) {
-      assert(SchemaValidator.validate(
-        schemaId: '$_baseSchemaUrl/icon_data',
-        value: value,
-        validate: validate,
-      ));
-      result = IconData(
-        JsonClass.parseInt(value['codePoint'])!,
-        fontFamily: value['fontFamily'],
-        fontPackage: value['fontPackage'],
-        matchTextDirection: JsonClass.parseBool(value['matchTextDirection']),
-      );
     }
 
     return result;
